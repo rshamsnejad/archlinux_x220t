@@ -22,7 +22,7 @@
 * Packages (`# pacstrap /mnt`)
   * `base linux linux-firmware intel-ucode`
   * `dosfstools exfat-utils e2fsprogs ntfs-3g lvm2`
-  * `networmanager`
+  * `networkmanager`
   * `vim`
   * `man-db man-pages texinfo`
 
