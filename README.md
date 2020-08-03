@@ -134,3 +134,11 @@ Reboot into graphical
       * Set **Rendering backend** to **OpenGL3.1**
     * Night Color
       * Activate and set at **3400 K**
+
+
+<!-- TODO :
+* Screen rotation
+* yay
+* Plymouth
+* Touch apps
+-->
