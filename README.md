@@ -69,4 +69,12 @@
 #### KDE Plasma install
 
 * `$ sudo pacman -S plasma plasma-wayland-session` (Keep all defaults)
-* `$ sudo pacman -S ark audiocd-kio dolphin dolphin-plugins gwenview kalarm kate kcalc kcharselect kcolorchooser kdeconnect kdenetwork-filesharing kdf kdialog kfind khelpcenter kio-extras kio-gdrive kmag knotes kolourpaint kompare konsole yakuake krdc krfb kruler ksystemlog ktimer okular print-manager spectacle svgpart zeroconf-ioslave`
+* `$ sudo pacman -S ark audiocd-kio dolphin dolphin-plugins gwenview kalarm kate kcalc kcharselect kcolorchooser kdeconnect kdenetwork-filesharing kdf kdialog kfind khelpcenter kio-extras kio-gdrive kmag knotes kolourpaint kompare konsole yakuake krdc krfb kruler ksystemlog ktimer okular print-manager spectacle svgpart zeroconf-ioslave firefox`
+* `$ sudo pacman -S xf86-input-synaptics kcm-wacomtablet`
+* `$ sudo systemctl enable sddm.service`
+* `$ sudo localectl set-x11-keymap fr`
+* `$ sudo pacman -S xdg-user-dirs`
+* `$ xdg-user-dirs-update`
+* `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
+* `$ sudo systemctl enable bluetooth.service`
+
