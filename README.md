@@ -66,3 +66,7 @@
 * `sudo pacman -Syu`
 * Import dotfiles
 
+#### KDE Plasma install
+
+* `$ sudo pacman -S plasma plasma-wayland-session` (Keep all defaults)
+* `$ sudo pacman -S ark audiocd-kio dolphin dolphin-plugins filelight gwenview kalarm kate kcalc kcharselect kcolorchooser kdeconnect kdenetwo`
