@@ -50,3 +50,14 @@
   * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/refind/drivers_x64`
   * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
   * Copy from git repo's `root_files/efi/EFI/refind/refind.conf` to `/efi/EFI/refind`
+
+## Arch post-install
+
+* `# cd /usr/bin && ln -s vim vi`
+* Uncomment the `%sudo` line in `visudo`
+* `# groupadd sudo`
+* `# useradd -m -G sudo <user>`
+* `# passwd <user>`
+* Log out and re-log in as *\<user\>*
+* `$ sudo systemctl enable NetworkManager`
+* `$ sudo systemctl start NetworkManager`
