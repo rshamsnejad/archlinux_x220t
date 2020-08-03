@@ -78,3 +78,59 @@
 * `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
 * `$ sudo systemctl enable bluetooth.service`
 
+Reboot into graphical
+
+* System settings :
+  * Input Devices
+    * Keyboard
+      * Layouts
+        * Remove `us`, add `fr`
+      * Advanced
+        * Tick **Key sequence to kill the X server**
+    * Touchpad
+      * Taps
+        * Set the **Tap to click** drop-downs
+      * Enable/Disable Touchpad
+        * Tick **Disable touchpad when mouse is plugged in**
+  * Account Details
+    * Configure user, and tick **Enable administrator privileges for this user**
+  * Global Theme
+    * Choose **Breeze Dark**
+  * Workspace Behavior
+    * General Behavior
+      * Tick **Double-click to open files and folders**
+    * Screen Edges
+      * Disable all
+    * Touch Screen
+      * Disable all
+    * Screen Locking
+      * Appearance
+        * Set background
+    * Virtual Desktops
+      * Set Main+Aux
+  * Startup and Shutdown
+    * Login Screen
+      * Theme
+        * Set background
+      * Advanced
+        * Click **Sync**
+    * Autostart
+      * Add **Yakuake**
+    * Desktop Session
+      * Tick **Start with an empty session**
+    * Splash Screen
+      * Disable
+  * Regional Settings
+    * Formats
+      * Set **Region** to **USA**, everything else to **France**
+    * Date & Time
+      * Tick **Set date and time automatically**
+  * Online accounts
+    * Set up Google Drive
+  * User Feedback
+    * Set at least **Basic System Information**
+  * Display and Monitor
+    * Compositor
+      * Set **Rendering backend** to **OpenGL3.1**
+    * Night Color
+      * Activate and set at **3400 K**
