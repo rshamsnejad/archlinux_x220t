@@ -25,6 +25,7 @@
   * `networkmanager`
   * `vim`
   * `man-db man-pages texinfo`
+  * `sudo bash-completion`
 
 * `# genfstab -L /mnt >> /mnt/etc/fstab`
 
