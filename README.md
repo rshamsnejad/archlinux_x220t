@@ -20,7 +20,7 @@
 | `/dev/vgarchlinux/linux-swap` | LINUX-SWAP | swap | 4G | `swap` |
 
 * Packages (`# pacstrap /mnt`)
-  * `base linux linux-firmware`
+  * `base linux linux-firmware intel-ucode`
   * `dosfstools exfat-utils e2fsprogs ntfs-3g lvm2`
   * `networmanager`
   * `vim`
@@ -28,8 +28,24 @@
 
 * `# genfstab -L /mnt >> /mnt/etc/fstab`
 
+* Copy `hostname`, `hosts`, `locale.conf`, `vconsole.conf` from git repo's `root_files/etc` to `/mnt/etc`
+
 * In chroot :
   * `# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime`
   * `# hwclock --systohc`
   * Uncomment `en_US.UTF8` and `fr_FR.UTF8` from `/etc/locale.gen`
   * `# locale-gen`
+  * Change in `/etc/mkinitcpio.conf` the `HOOKS` line to :
+  ```
+  HOOKS=(base systemd autodetect modconf block sd-lvm2 filesystems keyboard fsck)
+  ```
+  * `# mkinitcpio -P`
+  * `# passwd` to set root password
+  ##### Boot loader (rEFInd)
+
+  * `# pacman -Sy refind`
+  * `# refind-install`
+  * `# mkdir /efi/EFI/refind/drivers_x64`
+  * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/refind/drivers_x64`
+  * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
+  * Copy from git repo's `root_files/efi/EFI/refind/refind.conf` to `/efi/EFI/refind`
