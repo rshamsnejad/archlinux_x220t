@@ -138,7 +138,16 @@ Reboot into graphical
 
 <!-- TODO :
 * Screen rotation
+* Wayland or Touchegg ?..
+* Onboard / Kvkbd ?..
+* Tablet activities
+
 * yay
 * Plymouth
+
 * Touch apps
+  * Xournal++
+  * Write
+  * Notorious
+  * Krita
 -->
