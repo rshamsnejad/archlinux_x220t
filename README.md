@@ -195,7 +195,13 @@ Reboot into graphical
 
 ## Applications
 
-* `sudo pacman -S atom`
+* `$ sudo pacman -S atom`
+* `$ sudo pacman -S xournalpp texlive-latexextra`
+* `$ sudo pacman -S krita`
+* `$ curl http://www.styluslabs.com/write/write300.tar.gz -o /tmp/write300.tar.gz` (There's an AUR package, but the md5sums are wrong at the time of writing. See the INSTALL file for installation instructions)
+* `$ sudo pacman -S geogebra`
+* `$ sudo pacman -S libreoffice-fresh hunspell-fr hunspell-en_US`
+* `$ sudo pacman -S calibre`
 
 ## AUR helper
 
@@ -224,8 +230,5 @@ Reboot into graphical
 * Refind theme
 
 * Touch apps
-  * Xournal++
-  * Write
   * Notorious
-  * Krita
 -->
