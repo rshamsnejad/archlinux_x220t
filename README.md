@@ -146,6 +146,11 @@ Reboot into graphical
 * `$ sudo chmod 754 /opt/bin/thinkpad_rotate.sh`
 * Copy git repo's `root_files/etc/profile.d/path.sh` to `/etc/profile.d/`
 
+## Applications
+
+* `sudo pacman -S atom`
+
+
 <!-- TODO :
 * Screen rotation
 * Wayland or Touchegg ?..
