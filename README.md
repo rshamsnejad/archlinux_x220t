@@ -6,6 +6,7 @@
 * `# timedatectl set-ntp true`
 * `# timedatectl set-timezone Europe/Paris`
 * Disk layout :
+
 | Partition | Label | Filesystem | Size | Mount point |
 | -- | -- | -- | -- | -- |
 | `/dev/sda1` | EFI | FAT32 | 512M | `/efi` |
@@ -13,6 +14,7 @@
 | `/dev/sda3` |  | LVM PV | +100% |
 
 * LVM Layout :
+
 | Partition | Label | Filesystem | Size | Mount point |
 | -- | -- | -- | -- | -- |
 | `/dev/vgarchlinux/arch-root` | ARCH-ROOT | ext4 | 30G | `/` |
@@ -193,17 +195,6 @@ Reboot into graphical
           * Label Override
            * Super key : **"Sup"**
 
-## Applications
-
-* `$ sudo pacman -S atom`
-* `$ sudo pacman -S xournalpp texlive-latexextra`
-* `$ sudo pacman -S krita`
-* `$ curl http://www.styluslabs.com/write/write300.tar.gz -o /tmp/write300.tar.gz` (There's an AUR package, but the md5sums are wrong at the time of writing. See the INSTALL file for installation instructions)
-* `$ sudo pacman -S geogebra`
-* `$ sudo pacman -S libreoffice-fresh hunspell-fr hunspell-en_US`
-* `$ sudo pacman -S calibre`
-* `$ sudo pacman -S retext`
-
 ## AUR helper
 
 * Change the `MAKEFLAGS` line in `/etc/makepkg.conf` to `MAKEFLAGS="-j$(nproc)"`
@@ -218,11 +209,23 @@ Reboot into graphical
 * `$ yay -S plymouth-git`
 * `$ yay -S plymouth-theme-arch-breeze-git`
 * Add `sd-plymouth` after `systemd` in the `HOOKS` line of `/etc/mkinitcpio.conf`
-* Add `i915` the `MODULES` line in `/etc/mkinitcpio.conf`
+* Add `i915` in the `MODULES` line of `/etc/mkinitcpio.conf`
 * `$ sudo plymouth-set-default-theme -R arch-breeze`
 * Add `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` to the "standard" kernel parameters in `/boot/refind_linux.conf`
 * `$ sudo systemctl disable sddm.service`
 * `$ sudo systemctl enable sddm-plymouth.service`
+
+## Applications
+
+* `$ sudo pacman -S atom`
+* `$ sudo pacman -S xournalpp texlive-latexextra`
+* `$ sudo pacman -S krita`
+* `$ curl http://www.styluslabs.com/write/write300.tar.gz -o /tmp/write300.tar.gz` (There's an AUR package, but the md5sums are wrong at the time of writing. See the INSTALL file for installation instructions)
+* `$ sudo pacman -S geogebra`
+* `$ sudo pacman -S libreoffice-fresh hunspell-fr hunspell-en_US`
+* `$ sudo pacman -S calibre`
+* `$ sudo pacman -S retext`
+
 
 <!-- TODO :
 
