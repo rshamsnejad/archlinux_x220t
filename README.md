@@ -212,8 +212,10 @@ Reboot into graphical
 * `$ sudo systemctl enable sddm-plymouth.service`
 
 <!-- TODO :
-* Wayland or Touchegg ?..
+
 * Tablet activities
+
+* Refind theme
 
 * Touch apps
   * Xournal++
