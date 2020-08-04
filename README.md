@@ -202,6 +202,7 @@ Reboot into graphical
 * `$ sudo pacman -S geogebra`
 * `$ sudo pacman -S libreoffice-fresh hunspell-fr hunspell-en_US`
 * `$ sudo pacman -S calibre`
+* `$ sudo pacman -S retext`
 
 ## AUR helper
 
