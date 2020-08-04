@@ -80,6 +80,7 @@
 * `$ sudo touch /var/lib/sddm/.config/sddm-greeterrc`
 * `$ sudo chown sddm:sddm /var/lib/sddm/.config/sddm-greeterrc`
 * `$ sudo chmod 600 /var/lib/sddm/.config/sddm-greeterrc`
+* Copy from git repo's `root_files/etc/sddm.conf` to `/etc`
 
 Reboot into graphical
 
