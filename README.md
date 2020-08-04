@@ -77,6 +77,9 @@
 * `$ xdg-user-dirs-update`
 * `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
 * `$ sudo systemctl enable bluetooth.service`
+* `$ sudo touch /var/lib/sddm/.config/sddm-greeterrc`
+* `$ sudo chown sddm:sddm /var/lib/sddm/.config/sddm-greeterrc`
+* `$ sudo chmod 600 /var/lib/sddm/.config/sddm-greeterrc`
 
 Reboot into graphical
 
@@ -117,6 +120,7 @@ Reboot into graphical
   * Startup and Shutdown
     * Login Screen
       * Theme
+        * Choose "Breeze"
         * Set background
       * Advanced
         * Click **Sync**
