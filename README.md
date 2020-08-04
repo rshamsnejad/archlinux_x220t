@@ -164,6 +164,29 @@ Reboot into graphical
         * Assign to screen button
         * Command is `/opt/bin/thinkpad_rotate.sh`
 
+## On-screen keyboard
+
+* `$ sudo pacman -S onboard`
+* Onboard settings
+  * General
+    * Tick **Start Onboard hidden**
+    * Untick **Show when locking the screen**
+  * Window
+    * Window options
+      * Tick **Dock to screen edge**
+    * Transparency
+      * Window : 0
+      * Background : 40
+  * Layout
+    * **Compact**
+  * Theme
+    * **Blackboard**
+      * Customize theme
+        * Labels
+          * Font : **FreeSans**
+          * Label Override
+           * Super key : **"Sup"**
+
 ## Applications
 
 * `sudo pacman -S atom`
@@ -171,7 +194,6 @@ Reboot into graphical
 
 <!-- TODO :
 * Wayland or Touchegg ?..
-* Onboard / Kvkbd ?..
 * Tablet activities
 
 * yay
