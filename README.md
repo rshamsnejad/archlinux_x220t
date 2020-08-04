@@ -228,10 +228,12 @@ Reboot into graphical
 
 
 <!-- TODO :
+* sddm.conf (vkbd)
+
 
 * Tablet activities
 
-* Refind theme
+* Refind theme https://github.com/lukechilds/refind-ambience
 
 * Touch apps
   * Notorious
