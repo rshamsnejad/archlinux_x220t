@@ -135,6 +135,16 @@ Reboot into graphical
     * Night Color
       * Activate and set at **3400 K**
 
+## Screen rotation
+
+* `$ sudo pacman -S xorg-xrandr`
+* `$ sudo mkdir -p /opt/bin`
+* `$ sudo groupadd system`
+* `$ sudo gpasswd -a <user> system`
+* Copy git repo's `root_files/opt/bin/thinkpad_rotate.sh` to `/opt/bin/`
+* `$ sudo chown root:system /opt/bin/thinkpad_rotate.sh`
+* `$ sudo chmod 754 /opt/bin/thinkpad_rotate.sh`
+* Copy git repo's `root_files/etc/profile.d/path.sh` to `/etc/profile.d/`
 
 <!-- TODO :
 * Screen rotation
