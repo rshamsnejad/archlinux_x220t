@@ -145,6 +145,13 @@ Reboot into graphical
 * `$ sudo chown root:system /opt/bin/thinkpad_rotate.sh`
 * `$ sudo chmod 754 /opt/bin/thinkpad_rotate.sh`
 * Copy git repo's `root_files/etc/profile.d/path.sh` to `/etc/profile.d/`
+* System Settings
+  * Shortcuts
+    * Custom Shortcuts
+      * **Edit > New > Global Shortcut > Command/URL**
+        * Name : **Screen rotation**
+        * Assign to screen button
+        * Command is `/opt/bin/thinkpad_rotate.sh`
 
 ## Applications
 
@@ -152,7 +159,6 @@ Reboot into graphical
 
 
 <!-- TODO :
-* Screen rotation
 * Wayland or Touchegg ?..
 * Onboard / Kvkbd ?..
 * Tablet activities
