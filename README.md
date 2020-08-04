@@ -167,6 +167,10 @@ Reboot into graphical
 ## On-screen keyboard
 
 * `$ sudo pacman -S onboard`
+* System Settings
+  * Startup and Shutdown
+    * Autostart
+      * Add **Onboard**
 * Onboard settings
   * General
     * Tick **Start Onboard hidden**
