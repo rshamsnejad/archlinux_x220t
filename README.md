@@ -191,13 +191,28 @@ Reboot into graphical
 
 * `sudo pacman -S atom`
 
+## AUR helper
+
+* `$ mkdir ~/AUR`
+* `$ cd ~/AUR`
+* `$ git clone https://aur.archlinux.org/yay.git`
+* `$ cd yay`
+* `$ makepkg -si`
+
+## Plymouth (pretty boot)
+
+* `$ yay -S plymouth-git`
+* `$ yay -S plymouth-theme-arch-breeze-git`
+* Add `sd-plymouth` after `systemd` in the `HOOKS` line of `/etc/mkinitcpio.conf`
+* Add `i915` the `MODULES` line in `/etc/mkinitcpio.conf`
+* `$ sudo plymouth-set-default-theme -R arch-breeze`
+* Add `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` to the "standard" kernel parameters in `/boot/refind_linux.conf`
+* `$ sudo systemctl disable sddm.service`
+* `$ sudo systemctl enable sddm-plymouth.service`
 
 <!-- TODO :
 * Wayland or Touchegg ?..
 * Tablet activities
-
-* yay
-* Plymouth
 
 * Touch apps
   * Xournal++
