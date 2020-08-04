@@ -92,6 +92,12 @@ Reboot into graphical
         * Set the **Tap to click** drop-downs
       * Enable/Disable Touchpad
         * Tick **Disable touchpad when mouse is plugged in**
+    * Graphic Tablet
+      * Stylus
+        * Button 2 : **Right Mouse Button Click**
+      * Tablet
+        * Orientation
+          * Untick **Auto-rotate with screen** (conflicts with the rotate script)
   * Account Details
     * Configure user, and tick **Enable administrator privileges for this user**
   * Global Theme
