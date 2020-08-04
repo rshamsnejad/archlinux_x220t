@@ -102,6 +102,8 @@ Reboot into graphical
       * Tablet
         * Orientation
           * Untick **Auto-rotate with screen** (conflicts with the rotate script)
+      * Touch
+        * Untick **Enable touch**
   * Account Details
     * Configure user, and tick **Enable administrator privileges for this user**
   * Global Theme
