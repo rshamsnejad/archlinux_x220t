@@ -193,6 +193,7 @@ Reboot into graphical
 
 ## AUR helper
 
+* Change the `MAKEFLAGS` line in `/etc/makepkg.conf` to `MAKEFLAGS="-j$(nproc)"`
 * `$ mkdir ~/AUR`
 * `$ cd ~/AUR`
 * `$ git clone https://aur.archlinux.org/yay.git`
