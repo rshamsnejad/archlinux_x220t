@@ -48,10 +48,10 @@
 
   * `# pacman -Sy refind`
   * `# refind-install --usedefault /dev/sda1` - This flag is needed otherwise it won't boot (X220-specific ?)
-  * `# mkdir /efi/EFI/refind/drivers_x64`
-  * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/refind/drivers_x64`
+  * `# mkdir /efi/EFI/BOOT/drivers_x64`
+  * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/BOOT/drivers_x64`
   * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
-  * Copy from git repo's `root_files/efi/EFI/refind/refind.conf` to `/efi/EFI/refind`
+  * Copy from git repo's `root_files/efi/EFI/BOOT/refind.conf` to `/efi/EFI/BOOT`
 
 ## Arch post-install
 
