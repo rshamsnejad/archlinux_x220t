@@ -64,7 +64,7 @@
 * `$ sudo systemctl start NetworkManager`
 * `$ sudo pacman -Syu git base-devel`
 * Copy from git repo's `root_files/etc/pacman.conf` to `/etc`
-* `sudo pacman -Syu`
+* `$ sudo pacman -Syu`
 * Import dotfiles
 * Uncomment and set `DefaultTimeoutStopSec=20s` in `/etc/systemd/system.conf`
 
