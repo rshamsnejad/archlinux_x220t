@@ -72,6 +72,8 @@
 
 * `$ sudo pacman -S tlp acpi_call tp_smapi`
 * Copy from git repo's `root_files/etc/tlp.conf` to `/etc`
+* `$ sudo systemctl mask systemd-rfkill.service`
+* `$ sudo systemctl mask systemd-rfkill.socket`
 * `$ sudo systemctl enable tlp.service`
 
 #### KDE Plasma install
