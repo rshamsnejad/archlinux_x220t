@@ -68,6 +68,15 @@
 * Import dotfiles
 * Uncomment and set `DefaultTimeoutStopSec=20s` in `/etc/systemd/system.conf`
 
+## AUR helper
+
+* Change the `MAKEFLAGS` line in `/etc/makepkg.conf` to `MAKEFLAGS="-j$(nproc)"`
+* `$ mkdir ~/AUR`
+* `$ cd ~/AUR`
+* `$ git clone https://aur.archlinux.org/yay.git`
+* `$ cd yay`
+* `$ makepkg -si`
+
 ## TLP (power saving)
 
 * `$ sudo pacman -S tlp acpi_call tp_smapi`
@@ -202,15 +211,6 @@ Reboot into graphical
           * Font : **FreeSans**
           * Label Override
            * Super key : **"Sup"**
-
-## AUR helper
-
-* Change the `MAKEFLAGS` line in `/etc/makepkg.conf` to `MAKEFLAGS="-j$(nproc)"`
-* `$ mkdir ~/AUR`
-* `$ cd ~/AUR`
-* `$ git clone https://aur.archlinux.org/yay.git`
-* `$ cd yay`
-* `$ makepkg -si`
 
 ## rEFInd Theme and customization
 
