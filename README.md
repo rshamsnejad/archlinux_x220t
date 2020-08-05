@@ -70,7 +70,7 @@
 #### KDE Plasma install
 
 * `$ sudo pacman -S plasma plasma-wayland-session` (Keep all defaults)
-* `$ sudo pacman -S ark unrar audiocd-kio dolphin dolphin-plugins gwenview kalarm kate kcalc kcharselect kcolorchooser kdeconnect kdenetwork-filesharing kdf kdialog kfind khelpcenter kio-extras kio-gdrive kmag knotes kolourpaint kompare konsole yakuake krdc krfb kruler ksystemlog ktimer okular print-manager spectacle svgpart zeroconf-ioslave qt5-virtualkeyboard firefox`
+* `$ sudo pacman -S ark unrar unzip audiocd-kio dolphin dolphin-plugins gwenview kalarm kate kcalc kcharselect kcolorchooser kdeconnect kdenetwork-filesharing kdf kdialog kfind khelpcenter kio-extras kio-gdrive kmag knotes kolourpaint kompare konsole yakuake krdc krfb kruler ksystemlog ktimer okular print-manager spectacle svgpart zeroconf-ioslave qt5-virtualkeyboard firefox`
 * `$ sudo pacman -S xf86-input-synaptics kcm-wacomtablet`
 * `$ sudo systemctl enable sddm.service`
 * `$ sudo localectl set-x11-keymap fr`
@@ -209,6 +209,13 @@ Reboot into graphical
 * `$ sudo git clone https://github.com/rshamsnejad/refind-ambience.git /efi/EFI/BOOT/themes/refind-ambience`
 * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
 * Copy from git repo's `root_files/efi/EFI/BOOT/refind.conf` to `/efi/EFI/BOOT`
+* `$ sudo pacman -S edk2-shell`
+* `$ sudo cp /usr/share/edk2-shell/x64/Shell_Full.efi /efi/EFI/tools/shellx64.efi`
+* `$ yay -S memtest86-efi`
+* `$ sudo cp /usr/share/memtest86-efi/bootx64.efi /efi/EFI/tools/memtest86x64.efi`
+* `(cd /tmp && curl -O https://deac-ams.dl.sourceforge.net/project/gptfdisk/gptfdisk/1.0.4/gdisk-binaries/gdisk-efi-1.0.4.zip)`
+* `$ sudo unzip -j /tmp/gdisk-efi-*.zip gdisk-efi/gdisk_x64.efi -d /efi/EFI/tools/`
+
 ## Plymouth (pretty boot)
 
 * `$ yay -S plymouth-git`
