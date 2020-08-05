@@ -68,6 +68,12 @@
 * Import dotfiles
 * Uncomment and set `DefaultTimeoutStopSec=20s` in `/etc/systemd/system.conf`
 
+## TLP (power saving)
+
+* `$ sudo pacman -S tlp acpi_call tp_smapi`
+* Copy from git repo's `root_files/etc/tlp.conf` to `/etc`
+* `$ sudo systemctl enable tlp.service`
+
 #### KDE Plasma install
 
 * `$ sudo pacman -S plasma plasma-wayland-session` (Keep all defaults)
