@@ -50,6 +50,8 @@
   * `# refind-install --usedefault /dev/sda1` - This flag is needed otherwise it won't boot (X220-specific ?)
   * `# mkdir /efi/EFI/BOOT/drivers_x64`
   * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/BOOT/drivers_x64`
+  * `$ sudo mkdir /efi/EFI/BOOT/themes`
+  * `$ sudo git clone https://github.com/rshamsnejad/refind-ambience.git /efi/EFI/BOOT/themes/refind-ambience`
   * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
   * Copy from git repo's `root_files/efi/EFI/BOOT/refind.conf` to `/efi/EFI/BOOT`
 
@@ -228,8 +230,6 @@ Reboot into graphical
 
 
 <!-- TODO :
-* sddm.conf (vkbd)
-
 
 * Tablet activities
 
