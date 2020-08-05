@@ -243,8 +243,4 @@ Reboot into graphical
 
 * Tablet activities
 
-* Refind theme https://github.com/lukechilds/refind-ambience
-
-* Touch apps
-  * Notorious
 -->
