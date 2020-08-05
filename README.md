@@ -66,6 +66,7 @@
 * Copy from git repo's `root_files/etc/pacman.conf` to `/etc`
 * `sudo pacman -Syu`
 * Import dotfiles
+* Uncomment and set `DefaultTimeoutStopSec=20s` in `/etc/systemd/system.conf`
 
 #### KDE Plasma install
 
