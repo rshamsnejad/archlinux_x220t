@@ -251,5 +251,6 @@ Reboot into graphical
 <!-- TODO :
 
 * Tablet activities
+* Fan control
 
 -->
