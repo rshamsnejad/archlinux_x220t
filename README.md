@@ -68,6 +68,13 @@
 * Import dotfiles
 * Uncomment and set `DefaultTimeoutStopSec=20s` in `/etc/systemd/system.conf`
 
+## Mirror upgrade
+
+* `$ sudo pacman -S reflector`
+* Copy from git repo's `root_files/etc/pacman.d/hooks/reflector.hook` to `/etc/pacman.d/hooks`
+* Copy from git repo's `root_files/etc/systemd/system/reflector.*` to `/etc/systemd/system`
+* `$ sudo systemctl enable reflector.timer`
+
 ## AUR helper
 
 * Change the `MAKEFLAGS` line in `/etc/makepkg.conf` to `MAKEFLAGS="-j$(nproc)"`
