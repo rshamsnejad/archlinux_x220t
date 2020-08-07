@@ -253,11 +253,13 @@ Reboot into graphical
 * `$ sudo pacman -S libreoffice-fresh hunspell-fr hunspell-en_US`
 * `$ sudo pacman -S calibre`
 * `$ sudo pacman -S retext`
+* `$ sudo pacman -S basket`
 * `$ sudo pacman -S freecad-appimage librecad kicad kicad-library`
 * `$ yay -S logisim-evolution-git ttf-ms-fonts`
 * `$ sudo pacman -S pulseview`
 * `$ yay -S ltspice`
 * `$ yay -S yed`
+* `$ sudo pacman -S anki`
 
 <!-- TODO :
 
