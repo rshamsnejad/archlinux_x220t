@@ -99,6 +99,8 @@
 * `$ sudo systemctl start NetworkManager`
 * `$ nmtui` and activate Wi-Fi
 * `$ sudo pacman -Syu git base-devel`
+* `$ mkdir -p ~/dev/github`
+* `$ cd ~/dev/github && git clone https://github.com/rshamsnejad/archlinux_x220t.git`
 * Copy from git repo's `root_files/etc/pacman.conf` to `/etc`
 * `$ sudo pacman -Syu`
 * Import dotfiles
