@@ -40,17 +40,17 @@
 * `# lvcreate --name root --size 30G vgarchlinux`
 * `# lvcreate --name home --size 50G vgarchlinux`
 * `# mkswap -L "ARCH-SWAP" /dev/vgarchlinux/swap`
-* `# swapon /dev/vgarchlinux/swap`
 * `# mkfs.ext4 -L "ARCH-ROOT" /dev/vgarchlinux/root`
 * `# mkfs.ext4 -L "ARCH-HOME" /dev/vgarchlinux/home`
 
-* `# mount /dev/vgarchlinux/root /mnt`
+* `# swapon /dev/disk/by-label/ARCH-SWAP`
+* `# mount /dev/disk/by-label/ARCH-ROOT /mnt`
 * `# mkdir /mnt/efi`
-* `# mount /dev/sdb1 /mnt/efi`
+* `# mount /dev/disk/by-label/EFI /mnt/efi`
 * `# mkdir /mnt/boot`
-* `# mount /dev/sdb2 /mnt/boot`
+* `# mount /dev/disk/by-label/BOOT /mnt/boot`
 * `# mkdir /mnt/home`
-* `# mount /dev/vgarchlinux/home /mnt/home`
+* `# mount /dev/disk/by-label/ARCH-HOME /mnt/home`
 
 
 * Packages (`# pacstrap /mnt`)
