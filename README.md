@@ -93,7 +93,7 @@
 #### KDE Plasma install
 
 * `$ sudo pacman -S xf86-video-intel`
-* `$ sudo pacman -S plasma plasma-wayland-session` (Keep all defaults)
+* `$ sudo pacman -S plasma` (Keep all defaults)
 * `$ sudo pacman -S ark unrar unzip audiocd-kio dolphin dolphin-plugins gwenview kate kcalc kcharselect kcolorchooser kdeconnect kdenetwork-filesharing kdf kdialog kfind khelpcenter kio-extras kio-gdrive kmag kolourpaint kompare konsole yakuake krdc krfb kruler ksystemlog ktimer okular print-manager partitionmanager packagekit-qt5 spectacle svgpart zeroconf-ioslave qt5-virtualkeyboard firefox vlc`
 * `$ sudo pacman -S xf86-input-synaptics kcm-wacomtablet`
 * `$ sudo systemctl enable sddm.service`
