@@ -14,17 +14,17 @@
 
 | Partition | Label | Filesystem | Size | Mount point |
 | -- | -- | -- | -- | -- |
-| `/dev/sda1` | EFI | FAT32 | 512M | `/efi` |
-| `/dev/sda2` | BOOT | FAT32 | 512M | `/boot` |
-| `/dev/sda3` | LUKS | LVM PV on LUKS | 100G | `/dev/mapper/crypsys` |
+| `/dev/sdb1` | EFI | FAT32 | 512M | `/efi` |
+| `/dev/sdb2` | BOOT | FAT32 | 512M | `/boot` |
+| `/dev/sdb3` | LUKS | LVM PV on LUKS | 100G | `/dev/mapper/crypsys` |
 
 * Use `cgdisk` for partitioning
-* `# mkfs.fat -F 32 /dev/sda1`
-* `# fatlabel /dev/sda1 "EFI"`
-* `# mkfs.fat -F 32 /dev/sda2`
-* `# fatlabel /dev/sda2 "BOOT"`
-* `# cryptsetup luksFormat --label "LUKS" /dev/sda3`
-* `# cryptsetup open /dev/sda3 crypsys`
+* `# mkfs.fat -F 32 /dev/sdb1`
+* `# fatlabel /dev/sdb1 "EFI"`
+* `# mkfs.fat -F 32 /dev/sdb2`
+* `# fatlabel /dev/sdb2 "BOOT"`
+* `# cryptsetup luksFormat --label "LUKS" /dev/sdb3`
+* `# cryptsetup open /dev/sdb3 crypsys`
 
 * LVM Layout :
 
@@ -46,9 +46,9 @@
 
 * `# mount /dev/vgarchlinux/root /mnt`
 * `# mkdir /mnt/efi`
-* `# mount /dev/sda1 /mnt/efi`
+* `# mount /dev/sdb1 /mnt/efi`
 * `# mkdir /mnt/boot`
-* `# mount /dev/sda2 /mnt/boot`
+* `# mount /dev/sdb2 /mnt/boot`
 * `# mkdir /mnt/home`
 * `# mount /dev/vgarchlinux/home /mnt/home`
 
@@ -80,7 +80,7 @@
   ##### Boot loader (rEFInd)
 
   * `# pacman -Sy refind`
-  * `# refind-install --usedefault /dev/sda1` - This flag is needed otherwise it won't boot (X220-specific ?)
+  * `# refind-install --usedefault /dev/sdb1` - This flag is needed otherwise it won't boot (X220-specific ?)
   * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
 
 
