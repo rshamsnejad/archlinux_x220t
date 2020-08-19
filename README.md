@@ -110,7 +110,8 @@
 
 * `$ sudo pacman -S reflector`
 * Copy from git repo's `root_files/etc/pacman.d/hooks/reflector.hook` to `/etc/pacman.d/hooks`
-* Copy from git repo's `root_files/etc/systemd/system/reflector.*` to `/usr/local/lib/systemd/system`
+* `$ sudo mkdir -p /usr/local/lib/systemd/system`
+* Copy from git repo's `root_files/usr/local/lib/systemd/system/reflector.*` to `/usr/local/lib/systemd/system`
 * `$ sudo systemctl enable reflector.timer`
 
 ## AUR helper
