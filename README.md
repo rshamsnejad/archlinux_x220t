@@ -97,6 +97,7 @@
 * Log out and re-log in as *\<user\>*
 * `$ sudo systemctl enable NetworkManager`
 * `$ sudo systemctl start NetworkManager`
+* `$ nmtui` and activate Wi-Fi
 * `$ sudo pacman -Syu git base-devel`
 * Copy from git repo's `root_files/etc/pacman.conf` to `/etc`
 * `$ sudo pacman -Syu`
