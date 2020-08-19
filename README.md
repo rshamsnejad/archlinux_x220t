@@ -98,14 +98,14 @@
 * `$ sudo pacman -S xf86-input-synaptics kcm-wacomtablet`
 * `$ sudo systemctl enable sddm.service`
 * `$ sudo localectl set-x11-keymap fr`
-* `$ sudo pacman -S xdg-user-dirs`
-* `$ xdg-user-dirs-update`
-* `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
-* `$ sudo systemctl enable bluetooth.service`
 * `$ sudo touch /var/lib/sddm/.config/sddm-greeterrc`
 * `$ sudo chown sddm:sddm /var/lib/sddm/.config/sddm-greeterrc`
 * `$ sudo chmod 600 /var/lib/sddm/.config/sddm-greeterrc`
 * Copy from git repo's `root_files/etc/sddm.conf` to `/etc`
+* `$ sudo pacman -S xdg-user-dirs`
+* `$ xdg-user-dirs-update`
+* `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
+* `$ sudo systemctl enable bluetooth.service`
 
 Reboot into graphical
 
