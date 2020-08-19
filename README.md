@@ -48,8 +48,6 @@
 
   * `# pacman -Sy refind`
   * `# refind-install --usedefault /dev/sda1` - This flag is needed otherwise it won't boot (X220-specific ?)
-  * `# mkdir /efi/EFI/BOOT/drivers_x64`
-  * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/BOOT/drivers_x64`
 
 
 ## Arch post-install
