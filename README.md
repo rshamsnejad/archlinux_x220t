@@ -48,6 +48,7 @@
 
   * `# pacman -Sy refind`
   * `# refind-install --usedefault /dev/sda1` - This flag is needed otherwise it won't boot (X220-specific ?)
+  * Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
 
 
 ## Arch post-install
@@ -222,7 +223,6 @@ Reboot into graphical
 
 * `$ sudo mkdir /efi/EFI/BOOT/themes`
 * `$ sudo git clone https://github.com/rshamsnejad/refind-ambience.git /efi/EFI/BOOT/themes/refind-ambience`
-* Copy from git repo's `root_files/boot/refind_linux.conf` to `/boot`
 * Copy from git repo's `root_files/efi/EFI/BOOT/refind.conf` to `/efi/EFI/BOOT`
 * `$ sudo pacman -S edk2-shell`
 * `$ sudo cp /usr/share/edk2-shell/x64/Shell_Full.efi /efi/EFI/tools/shellx64.efi`
