@@ -5,21 +5,49 @@
 * `# loadkeys fr`
 * `# timedatectl set-ntp true`
 * `# timedatectl set-timezone Europe/Paris`
+
 * Disk layout :
 
 | Partition | Label | Filesystem | Size | Mount point |
 | -- | -- | -- | -- | -- |
 | `/dev/sda1` | EFI | FAT32 | 512M | `/efi` |
-| `/dev/sda2` | ARCH-BOOT | FAT32 | 512M | `/boot` |
-| `/dev/sda3` |  | LVM PV | +100% |
+| `/dev/sda2` | BOOT | FAT32 | 512M | `/boot` |
+| `/dev/sda3` | LUKS | LVM PV on LUKS | 100G | `/dev/mapper/crypsys` |
+
+* Use `cgdisk` for partitioning
+* `# mkfs.fat -F 32 /dev/sda1`
+* `# fatlabel /dev/sda1 "EFI"`
+* `# mkfs.fat -F 32 /dev/sda2`
+* `# fatlabel /dev/sda2 "BOOT"`
+* `# cryptsetup luksFormat --label "LUKS" /dev/sda3`
+* `# cryptsetup open /dev/sda3 crypsys`
 
 * LVM Layout :
 
 | Partition | Label | Filesystem | Size | Mount point |
 | -- | -- | -- | -- | -- |
-| `/dev/vgarchlinux/arch-root` | ARCH-ROOT | ext4 | 30G | `/` |
-| `/dev/vgarchlinux/arch-home` | ARCH-HOME | ext4 | 50G | `/home` |
-| `/dev/vgarchlinux/linux-swap` | LINUX-SWAP | swap | 4G | `swap` |
+| `/dev/vgarchlinux/swap` | ARCH-SWAP | swap | 4G | `swap` |
+| `/dev/vgarchlinux/root` | ARCH-ROOT | ext4 | 30G | `/` |
+| `/dev/vgarchlinux/home` | ARCH-HOME | ext4 | 50G | `/home` |
+
+* `# pvcreate /dev/mapper/crypsys`
+* `# vgcreate vgarchlinux /dev/mapper/crypsys`
+* `# lvcreate --name swap --size 4G vgarchlinux`
+* `# lvcreate --name root --size 30G vgarchlinux`
+* `# lvcreate --name home --size 50G vgarchlinux`
+* `# mkswap -L "ARCH-SWAP" /dev/vgarchlinux/swap`
+* `# swapon /dev/vgarchlinux/swap`
+* `# mkfs.ext4 -L "ARCH-ROOT" /dev/vgarchlinux/root`
+* `# mkfs.ext4 -L "ARCH-HOME" /dev/vgarchlinux/home`
+
+* `# mount /dev/vgarchlinux/root /mnt`
+* `# mkdir /mnt/efi`
+* `# mount /dev/sda1 /mnt/efi`
+* `# mkdir /mnt/boot`
+* `# mount /dev/sda2 /mnt/boot`
+* `# mkdir /mnt/home`
+* `# mount /dev/vgarchlinux/home /mnt/home`
+
 
 * Packages (`# pacstrap /mnt`)
   * `base linux linux-firmware intel-ucode`
@@ -40,10 +68,11 @@
   * `# locale-gen`
   * Change in `/etc/mkinitcpio.conf` the `HOOKS` line to :
   ```
-  HOOKS=(base systemd autodetect modconf block sd-lvm2 filesystems keyboard fsck)
+  HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
   ```
   * `# mkinitcpio -P`
   * `# passwd` to set root password
+
   ##### Boot loader (rEFInd)
 
   * `# pacman -Sy refind`
@@ -235,7 +264,9 @@ Reboot into graphical
 
 * `$ yay -S plymouth-git`
 * `$ yay -S plymouth-theme-arch-breeze-git`
-* Add `sd-plymouth` after `systemd` in the `HOOKS` line of `/etc/mkinitcpio.conf`
+* In the `HOOKS` line of `/etc/mkinitcpio.conf` :
+  * Add `plymouth` after `udev`
+  * Change `encrypt` for `plymouth-encrypt`
 * Add `i915` in the `MODULES` line of `/etc/mkinitcpio.conf`
 * `$ sudo plymouth-set-default-theme -R arch-breeze`
 * Add `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` to the "standard" kernel parameters in `/boot/refind_linux.conf`
