@@ -48,8 +48,6 @@
 
   * `# pacman -Sy refind`
   * `# refind-install --usedefault /dev/sda1` - This flag is needed otherwise it won't boot (X220-specific ?)
-  * `# mkdir /efi/EFI/BOOT/drivers_x64`
-  * `# cp /usr/share/refind/drivers_x64/ext4_x64.efi /efi/EFI/BOOT/drivers_x64`
 
 
 ## Arch post-install
@@ -72,7 +70,7 @@
 
 * `$ sudo pacman -S reflector`
 * Copy from git repo's `root_files/etc/pacman.d/hooks/reflector.hook` to `/etc/pacman.d/hooks`
-* Copy from git repo's `root_files/etc/systemd/system/reflector.*` to `/etc/systemd/system`
+* Copy from git repo's `root_files/etc/systemd/system/reflector.*` to `/usr/local/lib/systemd/system`
 * `$ sudo systemctl enable reflector.timer`
 
 ## AUR helper
@@ -94,19 +92,20 @@
 
 #### KDE Plasma install
 
-* `$ sudo pacman -S plasma plasma-wayland-session` (Keep all defaults)
+* `$ sudo pacman -S xf86-video-intel`
+* `$ sudo pacman -S plasma` (Keep all defaults)
 * `$ sudo pacman -S ark unrar unzip audiocd-kio dolphin dolphin-plugins gwenview kate kcalc kcharselect kcolorchooser kdeconnect kdenetwork-filesharing kdf kdialog kfind khelpcenter kio-extras kio-gdrive kmag kolourpaint kompare konsole yakuake krdc krfb kruler ksystemlog ktimer okular print-manager partitionmanager packagekit-qt5 spectacle svgpart zeroconf-ioslave qt5-virtualkeyboard firefox vlc`
 * `$ sudo pacman -S xf86-input-synaptics kcm-wacomtablet`
 * `$ sudo systemctl enable sddm.service`
 * `$ sudo localectl set-x11-keymap fr`
-* `$ sudo pacman -S xdg-user-dirs`
-* `$ xdg-user-dirs-update`
-* `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
-* `$ sudo systemctl enable bluetooth.service`
 * `$ sudo touch /var/lib/sddm/.config/sddm-greeterrc`
 * `$ sudo chown sddm:sddm /var/lib/sddm/.config/sddm-greeterrc`
 * `$ sudo chmod 600 /var/lib/sddm/.config/sddm-greeterrc`
 * Copy from git repo's `root_files/etc/sddm.conf` to `/etc`
+* `$ sudo pacman -S xdg-user-dirs`
+* `$ xdg-user-dirs-update`
+* `$ sudo pacman -S bluez-utils pulseaudio-bluetooth`
+* `$ sudo systemctl enable bluetooth.service`
 
 Reboot into graphical
 
