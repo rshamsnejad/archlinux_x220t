@@ -5,6 +5,10 @@
 * `# loadkeys fr`
 * `# timedatectl set-ntp true`
 * `# timedatectl set-timezone Europe/Paris`
+* `# iwd`
+  * `[iwd]# station wlan0 scan`
+  * `[iwd]# station wlan0 get-networks`
+  * `[iwd]# station wlan0 connect <SSID>`
 
 * Disk layout :
 
