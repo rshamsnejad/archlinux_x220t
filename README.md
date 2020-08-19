@@ -63,9 +63,11 @@
 
 * `# genfstab -L /mnt >> /mnt/etc/fstab`
 
+* `# pacman -Sy git`
+* `# git clone https://github.com/rshamsnejad/archlinux_x220t.git`
 * Copy `hostname`, `hosts`, `locale.conf`, `vconsole.conf` from git repo's `root_files/etc` to `/mnt/etc`
 
-* In chroot :
+* In chroot (`# arch-chroot /mnt`):
   * `# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime`
   * `# hwclock --systohc`
   * Uncomment `en_US.UTF8` and `fr_FR.UTF8` from `/etc/locale.gen`
