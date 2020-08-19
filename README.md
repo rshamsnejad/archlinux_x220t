@@ -89,7 +89,7 @@
 
 ## Arch post-install
 
-* `# cd /usr/bin && ln -s vim vi`
+* `# (cd /usr/bin && ln -s vim vi)`
 * Uncomment the `%sudo` line in `visudo`
 * `# groupadd sudo`
 * `# useradd -m -G sudo <user>`
