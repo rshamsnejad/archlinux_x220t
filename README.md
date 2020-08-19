@@ -154,8 +154,6 @@ Reboot into graphical
 * System settings :
   * Input Devices
     * Keyboard
-      * Layouts
-        * Remove `us`, add `fr`
       * Advanced
         * Tick **Key sequence to kill the X server**
     * Touchpad
