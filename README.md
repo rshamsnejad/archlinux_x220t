@@ -15,14 +15,14 @@
 | Partition | Label | Filesystem | Size | Mount point |
 | -- | -- | -- | -- | -- |
 | `/dev/sdb1` | EFI | FAT32 | 512M | `/efi` |
-| `/dev/sdb2` | BOOT | FAT32 | 512M | `/boot` |
+| `/dev/sdb2` | ARCH-BOOT | FAT32 | 512M | `/boot` |
 | `/dev/sdb3` | LUKS | LVM PV on LUKS | 100G | `/dev/mapper/crypsys` |
 
 * Use `cgdisk` for partitioning
 * `# mkfs.fat -F 32 /dev/sdb1`
 * `# fatlabel /dev/sdb1 "EFI"`
 * `# mkfs.fat -F 32 /dev/sdb2`
-* `# fatlabel /dev/sdb2 "BOOT"`
+* `# fatlabel /dev/sdb2 "ARCH-BOOT"`
 * `# cryptsetup luksFormat --label "LUKS" /dev/sdb3`
 * `# cryptsetup open /dev/sdb3 crypsys`
 
@@ -48,7 +48,7 @@
 * `# mkdir /mnt/efi`
 * `# mount /dev/disk/by-label/EFI /mnt/efi`
 * `# mkdir /mnt/boot`
-* `# mount /dev/disk/by-label/BOOT /mnt/boot`
+* `# mount /dev/disk/by-label/ARCH-BOOT /mnt/boot`
 * `# mkdir /mnt/home`
 * `# mount /dev/disk/by-label/ARCH-HOME /mnt/home`
 
