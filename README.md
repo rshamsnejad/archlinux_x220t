@@ -304,6 +304,32 @@ include themes/refind-ambience/theme.conf
 * `$ yay -S yed`
 * `$ sudo pacman -S anki`
 
+## Shared VeraCrypt drive with Windows
+
+* `$ sudo pacman -S veracrypt`
+* `$ sudo mkdir /mnt/SHARED`
+* `$ sudo groupadd veracrypt`
+* `$ sudo gpasswd -a <user> veracrypt`
+* `$ sudo visudo`
+  * Add `%veracrypt ALL=(ALL) NOPASSWD:/usr/bin/veracrypt`  
+* In VeraCrypt GUI :
+  * Click **Slot 1**
+  * Click **Select Device...**
+    * Choose `/dev/sda1`
+    * Validate
+      * Enter passphrase
+      * Under **Options** :
+      * Mount at directory : `/mnt/SHARED`
+      * Validate
+  * Right-click **Slot 1** and choose **Add to Favorites**
+* In System Settings :
+  * Startup and Shutdown
+    * Autostart
+      * Add Program...
+        * Enter `/usr/bin/veracrypt --auto-mount=favorites --use-dummy-sudo-password`
+
+
+
 <!-- TODO :
 
 * Tablet activities
