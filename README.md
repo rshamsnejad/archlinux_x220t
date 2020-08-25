@@ -62,6 +62,10 @@
   * `sudo bash-completion`
 
 * `# genfstab -L /mnt >> /mnt/etc/fstab`
+* Change the `LABEL=ARCH-SWAP` line to :
+```
+/dev/mapper/swap    	none      	swap      	sw  	0 0
+```
 
 * `# pacman -Sy git`
 * `# git clone https://github.com/rshamsnejad/archlinux_x220t.git`
