@@ -296,13 +296,14 @@ include themes/refind-ambience/theme.conf
 * `$ sudo pacman -S atom`
 * `$ sudo pacman -S xournalpp texlive-latexextra`
 * `$ sudo pacman -S krita`
-* `$ curl http://www.styluslabs.com/write/write300.tar.gz -o /tmp/write300.tar.gz` (There's an AUR package, but the md5sums are wrong at the time of writing. See the INSTALL file for installation instructions)
+* `$ yay -S write_stylus`
 * `$ sudo pacman -S geogebra`
 * `$ sudo pacman -S libreoffice-fresh hunspell-fr hunspell-en_US`
 * `$ sudo pacman -S calibre`
 * `$ sudo pacman -S retext`
 * `$ sudo pacman -S basket`
-* `$ sudo pacman -S freecad-appimage librecad kicad kicad-library`
+* `$ yay -S freecad-appimage`
+* `$ sudo pacman -S librecad kicad kicad-library`
 * `$ yay -S logisim-evolution-git ttf-ms-fonts`
 * `$ sudo pacman -S pulseview`
 * `$ yay -S ltspice`
