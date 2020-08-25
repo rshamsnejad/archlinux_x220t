@@ -74,7 +74,7 @@
   * `# locale-gen`
   * Change in `/etc/mkinitcpio.conf` the `HOOKS` line to :
   ```
-  HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
+  HOOKS=(base systemd sd-vconsole modconf keyboard block filesystems btrfs sd-encrypt fsck)
   ```
   * `# mkinitcpio -P`
   * `# passwd` to set root password
