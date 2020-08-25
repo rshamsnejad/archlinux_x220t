@@ -69,7 +69,7 @@
 
 * `# pacman -Sy git`
 * `# git clone https://github.com/rshamsnejad/archlinux_x220t.git`
-* Copy `hostname`, `hosts`, `locale.conf`, `vconsole.conf` from git repo's `root_files/etc` to `/mnt/etc`
+* Copy `crypttab`, `hostname`, `hosts`, `locale.conf`, `vconsole.conf` from git repo's `root_files/etc` to `/mnt/etc`
 
 * In chroot (`# arch-chroot /mnt`):
   * `# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime`
@@ -78,7 +78,7 @@
   * `# locale-gen`
   * Change in `/etc/mkinitcpio.conf` the `HOOKS` line to :
   ```
-  HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
+  HOOKS=(base systemd sd-vconsole modconf keyboard block filesystems btrfs sd-encrypt fsck)
   ```
   * `# mkinitcpio -P`
   * `# passwd` to set root password
