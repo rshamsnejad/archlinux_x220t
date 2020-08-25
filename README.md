@@ -280,10 +280,9 @@ include themes/refind-ambience/theme.conf
 
 * `$ yay -S plymouth-git`
 * `$ yay -S plymouth-theme-arch-breeze-git`
-* In the `HOOKS` line of `/etc/mkinitcpio.conf` :
-  * Add `plymouth` after `udev`
-  * Change `encrypt` for `plymouth-encrypt`
-* Add `i915` in the `MODULES` line of `/etc/mkinitcpio.conf`
+* In `/etc/mkinitcpio.conf` :
+  * Add `sd-plymouth` after `systemd` in the `HOOKS` line
+  * Add `i915` in the `MODULES` line
 * `$ sudo plymouth-set-default-theme -R arch-breeze`
 * Add `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` to the "standard" kernel parameters in `/boot/refind_linux.conf`
 * `$ sudo systemctl disable sddm.service`
