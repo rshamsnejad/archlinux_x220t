@@ -102,6 +102,8 @@
 * `$ sudo systemctl enable NetworkManager`
 * `$ sudo systemctl start NetworkManager`
 * `$ nmtui` and activate Wi-Fi
+* `$ sudo timedatectl set-ntp true`
+* `$ sudo timedatectl set-timezone Europe/Paris`
 * `$ sudo pacman -Syu git base-devel`
 * `$ mkdir -p ~/dev/github`
 * `$ cd ~/dev/github && git clone https://github.com/rshamsnejad/archlinux_x220t.git`
