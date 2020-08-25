@@ -12,50 +12,50 @@
 
 * Disk layout :
 
-| Partition | Label | Filesystem | Size | Mount point |
-| -- | -- | -- | -- | -- |
-| `/dev/sdb1` | EFI | FAT32 | 512M | `/efi` |
-| `/dev/sdb2` | ARCH-BOOT | FAT32 | 512M | `/boot` |
-| `/dev/sdb3` | LUKS | LVM PV on LUKS | 100G | `/dev/mapper/crypsys` |
+| Partition | Part. Label | FS Label | Filesystem | Size | Mount point |
+| -- | -- | -- | -- | -- | -- |
+| `/dev/sdb1` | EFI | EFI | FAT32 | 512M | `/efi` |
+| `/dev/sdb2` | BOOT | ARCH-BOOT | FAT32 | 512M | `/boot` |
+| `/dev/sdb3` | CRYPTSWAP | ARCH-SWAP | LUKS | 4G | `/dev/mapper/swap` |
+| `/dev/sdb3` | CRYPTSYSTEM | ARCH-SYSTEM | BTRFS on LUKS | 100G | `/dev/mapper/system` |
 
 * Use `cgdisk` for partitioning
-* `# mkfs.fat -F 32 /dev/sdb1`
-* `# fatlabel /dev/sdb1 "EFI"`
-* `# mkfs.fat -F 32 /dev/sdb2`
-* `# fatlabel /dev/sdb2 "ARCH-BOOT"`
-* `# cryptsetup luksFormat --label "LUKS" /dev/sdb3`
-* `# cryptsetup open /dev/sdb3 crypsys`
+* `# mkfs.fat -F 32 /dev/disk/by-partlabel/EFI -n "EFI"`
+* `# mkfs.fat -F 32 /dev/disk/by-partlabel/BOOT -n "ARCH-BOOT"`
+* `cryptsetup open --type plain --key-file /dev/urandom /dev/disk/by-partlabel/CRYPTSWAP swap`
+* `# cryptsetup luksFormat --label "ARCH-SYSTEM" /dev/disk/by-partlabel/CRYPTSYSTEM`
+* `# cryptsetup open /dev/disk/by-partlabel/CRYPTSYSTEM crypsys`
 
-* LVM Layout :
+* BTRFS Layout :
 
-| Partition | Label | Filesystem | Size | Mount point |
-| -- | -- | -- | -- | -- |
-| `/dev/vgarchlinux/swap` | ARCH-SWAP | swap | 4G | `swap` |
-| `/dev/vgarchlinux/root` | ARCH-ROOT | ext4 | 30G | `/` |
-| `/dev/vgarchlinux/home` | ARCH-HOME | ext4 | 50G | `/home` |
+| Subvolume | Mount point |
+| -- | -- |
+| `root` | `/` |
+| `home` | `/home` |
+| `snapshots` | `/.snapshots` |
 
-* `# pvcreate /dev/mapper/crypsys`
-* `# vgcreate vgarchlinux /dev/mapper/crypsys`
-* `# lvcreate --name swap --size 4G vgarchlinux`
-* `# lvcreate --name root --size 30G vgarchlinux`
-* `# lvcreate --name home --size 50G vgarchlinux`
-* `# mkswap -L "ARCH-SWAP" /dev/vgarchlinux/swap`
-* `# mkfs.ext4 -L "ARCH-ROOT" /dev/vgarchlinux/root`
-* `# mkfs.ext4 -L "ARCH-HOME" /dev/vgarchlinux/home`
+* `# mkswap -L "ARCH-SWAP" /dev/mapper/swap`
+* `# mkfs.btrfs --force --label "ARCH-BTRFS" /dev/mapper/system`
+* `# mount -t btrfs LABEL=ARCH-BTRFS /mnt`
+* `# btrfs subvolume create /mnt/root`
+* `# btrfs subvolume create /mnt/home`
+* `# btrfs subvolume create /mnt/snapshots`
+* `# umount -R /mnt`
 
 * `# swapon /dev/disk/by-label/ARCH-SWAP`
-* `# mount /dev/disk/by-label/ARCH-ROOT /mnt`
+* `BTFRS_OPTS="defaults,x-mount.mkdir,compress=lzo,ssd,noatime"`
+* `# mount -t btrfs -o subvol=root,$BTRFS_OPTS LABEL=ARCH-BTRFS /mnt`
+* `# mount -t btrfs -o subvol=home,$BTRFS_OPTS LABEL=ARCH-BTRFS /mnt/home`
+* `# mount -t btrfs -o subvol=snapshots,$BTRFS_OPTS LABEL=ARCH-BTRFS /mnt/.snapshots`
 * `# mkdir /mnt/efi`
 * `# mount /dev/disk/by-label/EFI /mnt/efi`
 * `# mkdir /mnt/boot`
 * `# mount /dev/disk/by-label/ARCH-BOOT /mnt/boot`
-* `# mkdir /mnt/home`
-* `# mount /dev/disk/by-label/ARCH-HOME /mnt/home`
 
 
 * Packages (`# pacstrap /mnt`)
   * `base linux linux-firmware intel-ucode`
-  * `dosfstools exfatprogs e2fsprogs ntfs-3g lvm2`
+  * `dosfstools exfatprogs btrfs-progs ntfs-3g`
   * `networkmanager`
   * `vim`
   * `man-db man-pages texinfo`
