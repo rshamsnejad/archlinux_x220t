@@ -65,7 +65,7 @@
 
 * `# pacman -Sy git`
 * `# git clone https://github.com/rshamsnejad/archlinux_x220t.git`
-* Copy `hostname`, `hosts`, `locale.conf`, `vconsole.conf` from git repo's `root_files/etc` to `/mnt/etc`
+* Copy `crypttab`, `hostname`, `hosts`, `locale.conf`, `vconsole.conf` from git repo's `root_files/etc` to `/mnt/etc`
 
 * In chroot (`# arch-chroot /mnt`):
   * `# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime`
