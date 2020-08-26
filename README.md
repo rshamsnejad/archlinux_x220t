@@ -281,11 +281,11 @@ include themes/refind-ambience/theme.conf
 ## Plymouth (pretty boot)
 
 * `$ yay -S plymouth-git`
-* `$ yay -S plymouth-theme-arch-breeze-git`
+* `$ yay -S plymouth-theme-circle-git`
 * In `/etc/mkinitcpio.conf` :
   * Add `sd-plymouth` after `systemd` in the `HOOKS` line
   * Add `i915` in the `MODULES` line
-* `$ sudo plymouth-set-default-theme -R arch-breeze`
+* `$ sudo plymouth-set-default-theme -R circle`
 * Add `quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0` to the "standard" kernel parameters in `/boot/refind_linux.conf`
 * `$ sudo systemctl disable sddm.service`
 * `$ sudo systemctl enable sddm-plymouth.service`
