@@ -59,7 +59,7 @@
   * `networkmanager`
   * `vim`
   * `man-db man-pages texinfo`
-  * `sudo bash-completion`
+  * `sudo bash-completion tmux`
 
 * `# genfstab -L /mnt >> /mnt/etc/fstab`
 * Change the `LABEL=ARCH-SWAP` line to :
