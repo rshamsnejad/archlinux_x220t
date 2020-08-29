@@ -112,6 +112,11 @@
 * Import dotfiles
 * Uncomment and set `DefaultTimeoutStopSec=20s` in `/etc/systemd/system.conf`
 
+## tmux configuration
+
+* `$ yay -S tmux-bash-completion-git powerline-fonts`
+* Follow instructions for the blue powerline theme : https://github.com/jimeh/tmux-themepack
+
 ## Mirror upgrade
 
 * `$ sudo pacman -S reflector`
