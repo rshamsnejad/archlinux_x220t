@@ -313,6 +313,7 @@ include themes/refind-ambience/theme.conf
 * `$ yay -S ltspice`
 * `$ yay -S yed`
 * `$ sudo pacman -S anki`
+* `$ sudo pacman -S gummi texlive-most`
 
 ## Shared VeraCrypt drive with Windows
 
